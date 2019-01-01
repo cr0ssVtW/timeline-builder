@@ -1,4 +1,4 @@
-package details
+package timeline.builder.details
 
 class Character {
 

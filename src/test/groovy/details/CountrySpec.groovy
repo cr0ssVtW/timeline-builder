@@ -2,9 +2,9 @@ package details
 
 import grails.testing.gorm.DomainUnitTest
 import spock.lang.Specification
-import timeline.builder.details.Character
+import timeline.builder.details.Country
 
-class CharacterSpec extends Specification implements DomainUnitTest<Character> {
+class CountrySpec extends Specification implements DomainUnitTest<Country> {
 
     def setup() {
     }
