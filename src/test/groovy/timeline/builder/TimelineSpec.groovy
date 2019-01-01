@@ -3,7 +3,7 @@ package timeline.builder
 import grails.testing.gorm.DomainUnitTest
 import spock.lang.Specification
 
-class LineSpec extends Specification implements DomainUnitTest<Line> {
+class TimelineSpec extends Specification implements DomainUnitTest<Timeline> {
 
     def setup() {
     }

@@ -2,7 +2,7 @@ package timeline.builder
 
 class World {
 
-    static hasMany = [lines: Line]
+    static hasMany = [timelines: Timeline]
 
     String worldName
 

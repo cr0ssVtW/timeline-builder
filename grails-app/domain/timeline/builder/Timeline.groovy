@@ -1,11 +1,11 @@
 package timeline.builder
 
-class Line {
+class Timeline {
 
     static hasMany = [ages: Age]
     static belongsTo = [world: World]
 
-    String lineName
+    String timelineName
 
 
     static constraints = {
