@@ -11,8 +11,18 @@ class WorldSpec extends Specification implements DomainUnitTest<World> {
     def cleanup() {
     }
 
-    void "test something"() {
-        expect:"fix me"
-            true == false
+    // name
+    def "worldName cannot be null"() {
+        when:
+            domain.worldName = null
+        then:
+            !domain.validate(['worldName'])
+            domain.errors['worldName'].code == 'nullable'
+    }
+    def "worldName cannot be blank"() {
+        when:
+            domain.worldName = ''
+        then:
+            !domain.validate(['worldName'])
     }
 }

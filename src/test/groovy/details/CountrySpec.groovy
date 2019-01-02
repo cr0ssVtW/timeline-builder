@@ -12,8 +12,18 @@ class CountrySpec extends Specification implements DomainUnitTest<Country> {
     def cleanup() {
     }
 
-    void "test something"() {
-        expect:"fix me"
-            true == false
+    def "country name cannot be null"() {
+        when:
+            domain.countryName = null
+        then:
+            !domain.validate(['countryName'])
+            domain.errors['countryName'].code == 'nullable'
     }
+    def "country name cannot be blank"() {
+        when:
+            domain.countryName = ''
+        then:
+            !domain.validate(['countryName'])
+    }
+
 }

@@ -1,13 +1,14 @@
 package timeline.builder
 
-class Age {
+class Era {
 
     static belongsTo = [timeline: Timeline]
     static hasMany = [points: Point]
 
-    String ageTitle
+    String eraTitle
 
 
     static constraints = {
+        eraTitle blank: false, maxSize: 40
     }
 }

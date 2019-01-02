@@ -7,5 +7,6 @@ class City {
     String cityName
 
     static constraints = {
+        cityName blank: false, maxSize: 40
     }
 }

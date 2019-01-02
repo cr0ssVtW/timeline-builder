@@ -5,14 +5,41 @@ import spock.lang.Specification
 
 class TimelineSpec extends Specification implements DomainUnitTest<Timeline> {
 
+    World testWorld
+
     def setup() {
+        testWorld = Mock(World) {worldName: "Test World"}
     }
 
     def cleanup() {
     }
 
-    void "test something"() {
-        expect:"fix me"
-            true == false
+    // name
+    def "timelineName cannot be null"() {
+        when:
+            domain.timelineName = null
+        then:
+            !domain.validate(['timelineName'])
+            domain.errors['timelineName'].code == 'nullable'
+    }
+    def "timelineName cannot be blank"() {
+        when:
+            domain.timelineName = ''
+        then:
+            !domain.validate(['timelineName'])
+    }
+
+    def "timeline world cannot be null"() {
+        when:
+            domain.world = null
+        then:
+            !domain.validate(['world'])
+            domain.errors['world'].code == 'nullable'
+
+        when:
+            domain.world = testWorld
+        then:
+            domain.validate(['world'])
+
     }
 }

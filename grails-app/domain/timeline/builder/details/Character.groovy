@@ -9,5 +9,9 @@ class Character {
     City residence
 
     static constraints = {
+        characterName blank: false, maxSize: 50
+        race blank: false, maxSize: 50
+        gender blank: false, maxSize: 20
+        residence nullable: true
     }
 }

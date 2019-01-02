@@ -12,5 +12,6 @@ class Event {
 
 
     static constraints = {
+        eventName blank: false, maxSize: 40
     }
 }
