@@ -6,7 +6,13 @@ class City {
 
     String cityName
 
+    String description
+
     static constraints = {
         cityName blank: false, maxSize: 40
+    }
+
+    static mapping = {
+        description sqlType: 'text'
     }
 }

@@ -41,4 +41,13 @@ class PointSpec extends Specification implements DomainUnitTest<Point> {
             domain.validate(['era'])
 
     }
+
+    // description
+    def "description cannot be null"() {
+        when:
+            domain.description = null
+        then:
+            !domain.validate(['description'])
+            domain.errors['description'].code == 'nullable'
+    }
 }

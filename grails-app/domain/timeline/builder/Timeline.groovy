@@ -7,8 +7,13 @@ class Timeline {
 
     String timelineName
 
+    String description
 
     static constraints = {
         timelineName blank: false, maxSize: 40
+    }
+
+    static mapping = {
+        description sqlType: 'text'
     }
 }

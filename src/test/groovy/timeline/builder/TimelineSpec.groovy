@@ -42,4 +42,13 @@ class TimelineSpec extends Specification implements DomainUnitTest<Timeline> {
             domain.validate(['world'])
 
     }
+
+    // description
+    def "description cannot be null"() {
+        when:
+            domain.description = null
+        then:
+            !domain.validate(['description'])
+            domain.errors['description'].code == 'nullable'
+    }
 }

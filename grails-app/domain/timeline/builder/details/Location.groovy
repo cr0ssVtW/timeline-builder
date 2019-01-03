@@ -9,8 +9,14 @@ class Location {
     String locationName
     Country country
 
+    String description
+
     static constraints = {
         locationName blank: false, maxSize: 50
         country nullable: true
+    }
+
+    static mapping = {
+        description sqlType: 'longText'
     }
 }

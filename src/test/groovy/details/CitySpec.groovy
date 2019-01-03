@@ -43,4 +43,13 @@ class CitySpec extends Specification implements DomainUnitTest<City> {
             domain.validate(['country'])
 
     }
+
+    // description
+    def "description cannot be null"() {
+        when:
+            domain.description = null
+        then:
+            !domain.validate(['description'])
+            domain.errors['description'].code == 'nullable'
+    }
 }

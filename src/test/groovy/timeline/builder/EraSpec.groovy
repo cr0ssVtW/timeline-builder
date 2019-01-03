@@ -41,4 +41,13 @@ class EraSpec extends Specification implements DomainUnitTest<Era> {
             domain.validate(['timeline'])
 
     }
+
+    // description
+    def "description cannot be null"() {
+        when:
+            domain.description = null
+        then:
+            !domain.validate(['description'])
+            domain.errors['description'].code == 'nullable'
+    }
 }

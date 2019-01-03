@@ -43,4 +43,13 @@ class LocationSpec extends Specification implements DomainUnitTest<Location> {
             domain.validate(['event'])
 
     }
+
+    // description
+    def "description cannot be null"() {
+        when:
+            domain.description = null
+        then:
+            !domain.validate(['description'])
+            domain.errors['description'].code == 'nullable'
+    }
 }

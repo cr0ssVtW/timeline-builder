@@ -41,4 +41,13 @@ class EventSpec extends Specification implements DomainUnitTest<Event> {
             domain.validate(['point'])
 
     }
+
+    // description
+    def "description cannot be null"() {
+        when:
+            domain.description = null
+        then:
+            !domain.validate(['description'])
+            domain.errors['description'].code == 'nullable'
+    }
 }

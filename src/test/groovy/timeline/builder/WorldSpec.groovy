@@ -25,4 +25,13 @@ class WorldSpec extends Specification implements DomainUnitTest<World> {
         then:
             !domain.validate(['worldName'])
     }
+
+    // description
+    def "description cannot be null"() {
+        when:
+            domain.description = null
+        then:
+            !domain.validate(['description'])
+            domain.errors['description'].code == 'nullable'
+    }
 }

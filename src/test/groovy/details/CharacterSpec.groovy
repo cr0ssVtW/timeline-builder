@@ -66,4 +66,13 @@ class CharacterSpec extends Specification implements DomainUnitTest<Character> {
             domain.validate(['residence'])
     }
 
+    // description
+    def "description cannot be null"() {
+        when:
+            domain.description = null
+        then:
+            !domain.validate(['description'])
+            domain.errors['description'].code == 'nullable'
+    }
+
 }
