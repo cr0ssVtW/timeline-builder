@@ -10,9 +10,10 @@ class CityControllerSpec extends Specification implements ControllerUnitTest<Cit
     def populateValidParams(params) {
         assert params != null
 
-        // TODO: Populate valid properties like...
-        //params["name"] = 'someValidName'
-        assert false, "TODO: Provide a populateValidParams() implementation for this generated test suite"
+        params = [
+                cityName: "testName",
+                description: "Test",
+        ]
     }
 
     void "Test the index action returns the correct model"() {

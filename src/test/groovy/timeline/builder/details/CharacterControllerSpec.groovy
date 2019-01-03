@@ -10,9 +10,13 @@ class CharacterControllerSpec extends Specification implements ControllerUnitTes
     def populateValidParams(params) {
         assert params != null
 
-        // TODO: Populate valid properties like...
-        //params["name"] = 'someValidName'
-        assert false, "TODO: Provide a populateValidParams() implementation for this generated test suite"
+        params = [
+                characterName: "testName",
+                dateOfBirth: new Date(),
+                race: "human",
+                gender: "male",
+                description: "Test",
+        ]
     }
 
     void "Test the index action returns the correct model"() {
