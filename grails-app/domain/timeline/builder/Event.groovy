@@ -1,5 +1,6 @@
 package timeline.builder
 
+import timeline.builder.details.Character
 import timeline.builder.details.Location
 
 class Event {

@@ -5,11 +5,12 @@ import timeline.builder.Event
 class Location {
 
     static belongsTo = [event: Event]
-    static hasOne = [country: Country]
 
     String locationName
+    Country country
 
     static constraints = {
         locationName blank: false, maxSize: 50
+        country nullable: true
     }
 }

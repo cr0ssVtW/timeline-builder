@@ -3,7 +3,6 @@ package timeline.builder.details
 class Country {
 
     static hasMany = [cities: City]
-    static belongsTo = [location: Location]
 
     String countryName
 
